@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Exercice 6 - JS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-</head>
-<body>
-    <script src="script.js"></script>
-    <script src="second.js"></script>
-</body>
+    <head>
+        <title>Exercice_5</title>
+        <meta charset="UTF-8">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <form>
+            <label for="premier_nombre">Premier nombre : </label><input type="text" id="premier_nombre" name="premier_nombre"/><br/>
+            <label for="deuxieme_nombre">Deuxième nombre : </label><input type="text" id="deuxieme_nombre" name="deuxieme_nombre"/><br/>
+            <button  id="valider" name ="valider">Valider</button>    
+        </form>
+        <script>
+            document.getElementById("valider").onclick = function() {validation()};
+        </script>
+    </body>
 </html>
