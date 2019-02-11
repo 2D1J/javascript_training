@@ -19,3 +19,15 @@ function surfaceCercle() {
     resultat = 3.16*r2;
     document.getElementById("surfaceCalc_cercle").innerHTML = resultat;
 }
+
+a = 3;
+b = 2;
+
+function triple(x) {
+    return x*3;
+}
+
+function affiche() {
+    alert(triple(a));
+    alert(triple(b));
+}
