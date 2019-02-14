@@ -1,8 +1,8 @@
 function conversionTemperature() {
-    let option = null;
-    let C = null;
+    let option = 0;
+    let C = 0;
     let K = 0;
-    let F = null;
+    let F = 0;
 
     option = Number(prompt(
         "1. Fin du programme \n" + "2. De Celsius vers Fahrenheit \n" +
@@ -13,42 +13,36 @@ function conversionTemperature() {
     if (option > 0 && option < 7) {
         switch (option) {
             case 1: alert("Fin du programme");
-                return;
+                break;
             case 2: // C => F [°F] = ([°C] x 9/5) + 32
                 C = prompt("Entrez les dégrés");
                 F = (Number(C) * Number((9/5))) + Number(32);
                 alert(C + "°C fait " + F + "°F.");
                 break;
             case 3: //Celsius => Kelvin
-                C = prompt("Celsius vers Kelvin.")
+                C = prompt("Celsius vers Kelvin.");
                 K = Number(C) + Number(273.15);
-                alert(C + "°C fait " + K + "°K.")
+                alert(C + "°C fait " + K + "°K.");
                 break;
             case 4: // F => K [K] = (([°F] - 32) x (5/9)) + 273,15
-                F = prompt("F vers K")
+                F = prompt("F vers K");
                 K = ((Number(F) - Number(32)) * (Number(5)/Number(9)) + Number(273.15));
                 break;
-
             case 5: // K => C [°C] = [K] - 273,15
-                K = prompt("Kelvin vers Celsius.")
+                K = prompt("Entrez les °K à convertir.");
                 C = Number(K) - Number(273.15);
-                alert(K + "° Kelvin fait " + C + "° Celsius.")
+                alert(K + "° Kelvin fait " + C + "° Celsius.");
                 break;
             case 6: // K => F [°F] = ([K] x 9/5) - 459,67
-
+                K = prompt("K => F");
+                F = Number(K) * (Number(9)/Number(5)) - Number(459.67);
+                alert(K + "° Kelvin = " + F + "°F");
                 break;
-
             default: alert("Vous n'avez rien entré.");
                 break;
         }
-
     }
-
-   
-    alert("Vous pouvez réessayer.");
-    
-
-    console.log(option);
+    alert("Vous pouvez réessayer en cliquant de nouveau.");
 }
 
 /* Exercice 12 - Conversion de température Celsius, Fahrenheit et Kelvin
