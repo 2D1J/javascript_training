@@ -1,4 +1,10 @@
+document.getElementById("nom").onkeydown = function() {keyDown()};
 
+function keyDown() {
+    let champ = document.getElementById("nom").value;
+    console.log(champ);
+    alert(champ);
+}
 
 
 /* Exercice 3
