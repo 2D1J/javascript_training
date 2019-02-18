@@ -4,6 +4,7 @@ let texte = document.getElementById("texte");
 Array.from(divbtn).forEach(element => {
     console.log(element);
     element.addEventListener("click", changeColor);
+    
     function changeColor() {
         console.log(element);
         if (element.className === "color green") {
