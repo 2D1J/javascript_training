@@ -1,6 +1,7 @@
 ## Exercices JavaScript - Partie 4
 
-IMPORTANT Toutes les ressources aux exercices seront fournies quand cela sera nécessaire.
+*IMPORTANT* 
+Toutes les ressources aux exercices seront fournies quand cela sera nécessaire.
 Pour la sécurité de votre code, à chaque formulaire, verifiez que ce qui est saisi correspond à ce qui est attendu.
 
 ### Exercice 1

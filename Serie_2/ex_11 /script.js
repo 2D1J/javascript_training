@@ -1,30 +1,35 @@
 function calculMoyenne() {
-    let nbre_entier = 0;
-    let nbre_valeur = null;
-    let somme = null;
-    let moyenne = null;
-    
-    while() {
-        do {
-            nbre_entier = Number(prompt("Entrez un nombre entier (do)"));
-            if (nbre_entier - Math.floor(nbre_entier) !== 0) {
-                alert("Réessayez.");
-                break;
-            }
+    let total = 0;
+    let essai = 0;
+
+    do {
+        nbre_entier = prompt("Entrez un nombre entier");
+        if(Number.isInteger(Number(nbre_entier))){
+            console.log("test");
+            essai++;
+            total += Number(nbre_entier);
+            console.log(total);   
         }
-        while (nbre_entier >= 0) {
-            nbre_entier = Number(prompt("Entrez un nombre entier (while)"));
-            nbre_valeur++
-            console.log(nbre_valeur);
-            somme += nbre_entier;
-            console.log(somme);
-            if (nbre_entier = 0) {
-            }
+        else{
+            console.log("test2")
         }
-        console.log("La moyenne est de " + (moyenne = somme / nbre_valeur));
-        console.log("Vous avez entré " + nbre_valeur + " nombres");
     }
+    
+    while (nbre_entier >= 0)
+
+
+    if(nbre_entier< 0){
+        console.log(essai);
+        let moyenne = total/essai;
+        console.log(moyenne);
+
+    }
+
+    // console.log("essai = " + essai);
+    
+    
 }
+
 /* Créer un bouton. Au click de ce bouton, lancer la fonction calculMoyenne.
 
     Cette fonction va calculer la moyenne des nombres entrés au clavier :
