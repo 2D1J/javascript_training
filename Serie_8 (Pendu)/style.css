@@ -27,6 +27,14 @@ h1{
     margin-left: 10px;
 }
 
+div p{
+    text-align: center;
+}
+
+div h3{
+    font-size: 50px;
+}
+
 #troistier{
     height: 80vh;
     display: flex;
@@ -63,6 +71,7 @@ input{
     justify-content: flex-end;
     align-items: center;
     padding-bottom: 20px;
+    padding-top: 20px;
 }
 input{
     background-color: rgb(145, 18, 18);

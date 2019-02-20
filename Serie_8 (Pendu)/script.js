@@ -3,19 +3,27 @@ document.getElementById("button").onclick = function() {guessLetter()};
 function guessLetter() {
     const wordToFound = ['B', 'O', 'N', 'J', 'O', 'U', 'R'];
     let essai = null; 
+    var lettres = new Array;
     do {
-        var lettres = [];
         x = prompt("Entrez une lettre.");
         if(x.length === 1) {
-            alert("C'est bien une lettre.");
             lettres.push(x);
+            essai++;
             console.log(lettres);
+            console.log(essai);
+            document.getElementById("essai").innerHTML = essai;
+         /* if (x = une lettre de l'array wordToFound.) {
+                il met la lettre dans l'array lettres. [lettres.push(x)]
+
+
+         }
+            */
         }
         else {
-            alert("Plus d'une lettre.");
+            alert("Vous devez rentrer UNE lettre.");
         }
     }
-    while (x!=="b")
+    while (x!=="b") //array wordToFound = array lettre
     console.log(x);
     console.log(wordToFound);
 }
