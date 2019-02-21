@@ -9,6 +9,7 @@ body{
     font-family: 'Ubuntu Condensed', sans-serif;
     flex-direction: column;
     justify-content: flex-end;
+    display: 
 }
 
 header{
@@ -33,6 +34,7 @@ div p{
 
 div h3{
     font-size: 40px;
+    letter-spacing: 3px;
 }
 
 #troistier{

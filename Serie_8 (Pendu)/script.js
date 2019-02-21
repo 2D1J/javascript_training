@@ -1,35 +1,33 @@
 document.getElementById("button").onclick = function() {guessLetter()};
-var foundLetter = ['_','_','_','_','_','_','_'];
-document.getElementById("afficherlettre").innerHTML = foundLetter;
+var foundLetter =  ['_','_','_','_','_','_','_'];
+var word = foundLetter.join("");
+document.getElementById("afficherlettre").innerHTML = word;
+
 
 function guessLetter() {
     const wordToFound = ['B', 'O', 'N', 'J', 'O', 'U', 'R'];
-    let essai = null;
+    // var foundLetter =  []; //['_','_','_','_','_','_','_'];
+    let essai = 0;
+    document.getElementById("essai").innerHTML = essai;
     let x = null;
     do {
         x = prompt("Entrez une lettre.");
         x = x.toUpperCase();
         if(x.length === 1) {
-            essai++;
-            document.getElementById("essai").innerHTML = essai;
-            // wordToFound.forEach(item => {
-                // item.include(x);
-               // }
-            for (i = 0; i < wordToFound.length; i++) { 
-                console.log(i);
-                console.log(wordToFound[i]);
-                // console.log(wordToFound[i].includes(x));
+            for (i = 0; i < wordToFound.length; i++) {
                 cond = wordToFound[i].includes(x);
                 console.log(cond);
                 if (cond === true) {
-                    alert("test");
-                    //foundLetter[i]= x;
-                    // console.log(foundLetter);
+                    foundLetter[i] = x;
+                    document.getElementById("afficherlettre").innerHTML = foundLetter;
                 }
                 else {
-
+                    essai++;
+                    console.log("Loser count " + essai);
+                    document.getElementById("essai").innerHTML = essai;
                 } 
             }
+            document.getElementById("afficherlettre").innerHTML = foundLetter.join("");
                 // console.log (item);
                 // console.log (item.includes(x));
         }
@@ -37,7 +35,18 @@ function guessLetter() {
             alert("Vous devez rentrer UNE lettre.");
         }
     }
-    while (x!=="b") //array wordToFound = array lettre
+    while (wordToFound.toString() !== foundLetter.toString())
+    console.log(wordToFound.toString());
+     //array wordToFound = array lettre = > wordToFound.length !== foundLetter.length
+    confirm("Vous avez trouvé le mot. \n Souhaitez-vous rejouer?");
+    console.log();
+        if (true) {
+            alert("OK");
+        }
+        else {
+            alert("Cancel");
+        }
+
 }
 
 
