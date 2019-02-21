@@ -9,14 +9,12 @@ body{
     font-family: 'Ubuntu Condensed', sans-serif;
     flex-direction: column;
     justify-content: flex-end;
-    display: 
 }
 
 header{
     max-width: inherit;
     max-height: 10%;
     height: 15vh;
-    border: 1px solid red;
     align-items: center;
 }
 
@@ -47,7 +45,6 @@ div h3{
 .untier{
     max-width: 33%;
     width: 33%;
-    border: 1px solid green;
 }
 aside{
     display: flex;
@@ -86,8 +83,14 @@ input:hover{
     box-shadow: 0px 1px 4px 1px rgba(0,0,0,0.75);
 }
 
+img{
+    min-width: 40px;
+    min-height: auto;
+    width: 150px;
+    height: auto;
+}
+
 footer{
-    border: 1px solid red;
     height: 5vh;
     text-align: center;
 }

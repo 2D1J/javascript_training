@@ -3,12 +3,10 @@ var foundLetter =  ['_','_','_','_','_','_','_'];
 var word = foundLetter.join("");
 document.getElementById("afficherlettre").innerHTML = word;
 
-
 function guessLetter() {
     const wordToFound = ['B', 'O', 'N', 'J', 'O', 'U', 'R'];
-    // var foundLetter =  []; //['_','_','_','_','_','_','_'];
-    let essai = 0;
-    document.getElementById("essai").innerHTML = essai;
+    // let essai = 0;
+    // document.getElementById("essai").innerHTML = essai;
     let x = null;
     do {
         x = prompt("Entrez une lettre.");
@@ -22,31 +20,23 @@ function guessLetter() {
                     document.getElementById("afficherlettre").innerHTML = foundLetter;
                 }
                 else {
-                    essai++;
-                    console.log("Loser count " + essai);
-                    document.getElementById("essai").innerHTML = essai;
                 } 
             }
             document.getElementById("afficherlettre").innerHTML = foundLetter.join("");
-                // console.log (item);
-                // console.log (item.includes(x));
         }
         else {
             alert("Vous devez rentrer UNE lettre.");
         }
     }
     while (wordToFound.toString() !== foundLetter.toString())
-    console.log(wordToFound.toString());
-     //array wordToFound = array lettre = > wordToFound.length !== foundLetter.length
-    confirm("Vous avez trouvé le mot. \n Souhaitez-vous rejouer?");
-    console.log();
-        if (true) {
-            alert("OK");
-        }
-        else {
-            alert("Cancel");
-        }
-
+    confirmation = confirm("Vous avez trouvé le mot. \n Souhaitez-vous rejouer?");
+    if (confirmation == true) {
+        foundLetter =  ['_','_','_','_','_','_','_'];
+        document.getElementById("afficherlettre").innerHTML = foundLetter.join("");
+    }
+    else {
+        alert("Ok. Casses toi.");
+    }
 }
 
 
