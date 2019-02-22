@@ -1,4 +1,6 @@
 document.getElementById("button").onclick = function() {guessLetter()};
+// const input = document.getElementById("letterbox");
+// input.onfocus = function() {guessLetter()};
 var foundLetter =  ['_','_','_','_','_','_','_'];
 var word = foundLetter.join("");
 document.getElementById("afficherlettre").innerHTML = word;
@@ -8,8 +10,11 @@ function guessLetter() {
     // let essai = 0;
     // document.getElementById("essai").innerHTML = essai;
     let x = null;
+    console.log(x);
     do {
-        x = prompt("Entrez une lettre.");
+        // input.removeAttribute("value");
+        x = prompt("Entrez une lettre.")
+        // x = input.value;
         x = x.toUpperCase();
         if(x.length === 1) {
             for (i = 0; i < wordToFound.length; i++) {
