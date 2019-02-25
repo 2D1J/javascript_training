@@ -14,9 +14,6 @@ let mainCharacter = {
 
 mainCharacter.attack();
 
-
-
-
 /*
 
 crée un objet "mainCharacter" qui possède le propriétés suivantes :
