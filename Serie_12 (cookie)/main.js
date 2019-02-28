@@ -37,17 +37,15 @@ function bonus() {
         score -= costbonus;
         score = 2 * score;
     }
-}
+};
 
 
 function autoClick() {
     if (score >= costauto) {
-        function auto() {
         score -= costauto;
-        score++;
-        }
+        setInterval(function(){score++;},1000);
     }
-    else {};
+    else {}
 };
 
 function update(){
@@ -56,7 +54,7 @@ function update(){
     BONUS.value = "Bonus : " + costbonus + " data";
     AUTOCLICK.value = "Autoclicker : " + costauto + " data";
 
-    if (score <= costauto) {
+    if (score < costauto) {
         AUTOCLICK.style.color = "black";
     }
     else {AUTOCLICK.style.color = "white";}
@@ -71,6 +69,4 @@ function update(){
     }
     else {BONUS.style.color = "white";}
 }
-
-setInterval(auto,1000);
 setInterval(update,100);
