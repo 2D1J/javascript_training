@@ -1,54 +1,76 @@
-document.getElementById("clic").addEventListener("click", cookieClicker);
-document.getElementById("multiplier").addEventListener("click", augmenterMultiplicateur);
-document.getElementById("autoclick").addEventListener("click", autoClick);
-let afficher = document.getElementById("affichage");
+const CLIC = document.getElementById("clic");
+const BONUS = document.getElementById("bonus");
+const AUTOCLICK = document.getElementById("autoclick");
+const MULTIPLIER = document.getElementById("multiplier");
+const AFFICHER = document.getElementById("affichage");
+
+CLIC.addEventListener("click", cookieClicker);
+MULTIPLIER.addEventListener("click", augmenterMultiplicateur);
+AUTOCLICK.addEventListener("click", autoClick);
+BONUS.addEventListener("click", bonus);
+
 let score = Number(0);
 let multiplicateur = Number(1);
 let costmult = 50;
+let costauto = 500;
+let i = 0
+let costbonus = 5000;
 
 function augmenterMultiplicateur() {
-    // let cost = 50;
     if (score >= costmult) {
         score -= costmult;
         multiplicateur++;
         costmult = costmult * 2;
-        document.getElementById("multiplier").value = "Multiplicateur x" + multiplicateur + " : " + costmult + " data";
+        // MULTIPLIER.value = "Multiplicateur x" + multiplicateur + " : " + costmult + " data";
     }
     else {
     }
 }
 
 function cookieClicker() {
-    // setInterval(ChangeColor, 100);
     affichage.classList.toggle("toggleclic");
     score = score+multiplicateur;
 }
 
+function bonus() {
+    if (score >= costbonus) {
+        score -= costbonus;
+        score = 2 * score;
+    }
+}
 
 
 function autoClick() {
-    let cost = 500;
-    if (score >= cost) {
-    score++;
+    if (score >= costauto) {
+        function auto() {
+        score -= costauto;
+        score++;
+        }
     }
     else {};
 };
 
 function update(){
-    afficher.innerHTML = score + " data collected.";
-    console.log("score = " + score);
-    console.log("multiplicateur = " + multiplicateur);
-    console.log("Cost Mult " + costmult);
-    if (score <= 10) {
-        document.getElementById("autoclick").style.color = "black";
+    AFFICHER.innerHTML = score + " data collected.";
+    MULTIPLIER.value = "Multiplicateur x" + multiplicateur + " : " + costmult + " data";
+    BONUS.value = "Bonus : " + costbonus + " data";
+    AUTOCLICK.value = "Autoclicker : " + costauto + " data";
+
+    if (score <= costauto) {
+        AUTOCLICK.style.color = "black";
     }
-    else {document.getElementById("autoclick").style.color = "white";}
+    else {AUTOCLICK.style.color = "white";}
+    
     if (score < costmult) {
-        document.getElementById("multiplier").style.color = "black";
+        MULTIPLIER.style.color = "black";
     }
-    else {
-        document.getElementById("multiplier").style.color = "white";
+    else {MULTIPLIER.style.color = "white";}
+
+    if (score < costbonus) {
+        BONUS.style.color = "black";
     }
+    else {BONUS.style.color = "white";}
 }
-setInterval(autoClick,1000);
+
+setInterval(auto,1000);
 setInterval(update,100);
