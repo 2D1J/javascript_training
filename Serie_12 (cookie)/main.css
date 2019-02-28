@@ -26,19 +26,19 @@ body{
     padding: auto;
 }
 
-input{
+input, #affichage{
     background-color: teal;
-    border-color: magenta;
+    border: 2px solid magenta;
     color: white;
     margin-bottom: 5px;
     border-radius: 5px;
     padding: 5px;
 }
 
-#affichage{
-    border: 4px green solid;
-    border-radius: 5px;
-    background-color: grey;
-    padding: 4px;
-    color: white;
+.toggleclic{
+    color: black;
+    /* background-color: magenta; 
+    border-color: teal; */
+    border: 3px solid;
+    padding: 1000px;
 }
