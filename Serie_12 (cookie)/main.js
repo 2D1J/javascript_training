@@ -36,6 +36,24 @@ function bonus() {
     if (score >= costbonus) {
         score -= costbonus;
         score = 2 * score;
+        let i = 0;
+        let chrono = 30;
+        let timer = setInterval(function(){
+            score = score * Number(2);
+            i++
+            chrono -= i;
+            console.log(i);
+            BONUS.value = "Bonus actif pendant " + chrono + "secondes";
+            if (i >= 30) {
+                clearInterval(timer)
+                }
+            else {}
+        }, 1000);
+        // console.log(i);
+        // if (i >= 30) {
+        // clearInterval(timer)
+        // }
+        // else {}
     }
 };
 
@@ -44,6 +62,7 @@ function autoClick() {
     if (score >= costauto) {
         score -= costauto;
         setInterval(function(){score++;},1000);
+        AUTOCLICK.style.display = "none";
     }
     else {}
 };
@@ -69,4 +88,5 @@ function update(){
     }
     else {BONUS.style.color = "white";}
 }
+
 setInterval(update,100);
