@@ -3,14 +3,16 @@ document.getElementById("multiplier").addEventListener("click", augmenterMultipl
 document.getElementById("autoclick").addEventListener("click", autoClick);
 let afficher = document.getElementById("affichage");
 let score = Number(0);
-let i = Number(0);
 let multiplicateur = Number(1);
+let costmult = 100;
 
 function augmenterMultiplicateur() {
-    let cost = 50;
-    if (score >= cost) {
-        score -= cost;
+    // let cost = 50;
+    if ((score*multiplicateur) >= costmult) {
+        score -= costmult;
         multiplicateur++;
+        costmult * 2;
+        document.getElementById("multiplier").value = "Multiplicateur x" + multiplicateur + " : " + costmult + " data";
     }
     else {
     }
@@ -25,7 +27,6 @@ function cookieClicker() {
     afficher.style.backgroundColor = "magenta";
     afficher.style.borderColor = "teal";
     score++;
-
 }
 
 function autoClick() {
@@ -36,10 +37,12 @@ function autoClick() {
     else {};
 };
 
-
-
 function update(){
-    afficher.innerHTML = score + " data collected.";
+    afficher.innerHTML = (score*multiplicateur) + " data collected.";
+    console.log("score = " + score);
+    console.log("multiplicateur = " + multiplicateur);
+    console.log(score*multiplicateur);
+    console.log("Cost Mult " + costmult);
     if (score <= 10) {
         document.getElementById("autoclick").style.color = "black";
     }
@@ -51,11 +54,5 @@ function update(){
         document.getElementById("multiplier").style.color = "white";
     }
 }
-
 setInterval(autoClick,1000);
-
 setInterval(update,100);
-
-console.log("multiplicateur = " + multiplicateur);
-console.log("i = " + i);
-console.log("score = " + score);

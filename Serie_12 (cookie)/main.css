@@ -1,8 +1,9 @@
 body{
     height: 100%;
     width: 100%;
-    background: rgb(200,38,38);
-    background: linear-gradient(90deg, rgba(200,38,38,1) 0%, rgba(205,13,13,1) 48%, rgba(96,8,8,1) 100%);
+    /* background: rgb(200,38,38);
+    background: linear-gradient(90deg, rgba(200,38,38,1) 0%, rgba(205,13,13,1) 48%, rgba(96,8,8,1) 100%); */
+
     background-image: url("./img/glitch.png");
     background-size: cover;
     margin: 0px;
@@ -10,10 +11,11 @@ body{
 }
 
 .buttons{
+    background-color: rgba(0, 0, 0, 0.801);
     position: absolute;
     top: 25%;
     right: 25%;
-    border: 2px solid green;
+    border: 2px solid black;
     width: 50%;
     height: 50%;
     display: flex;
