@@ -9,13 +9,14 @@ MULTIPLIER.addEventListener("click", augmenterMultiplicateur);
 AUTOCLICK.addEventListener("click", autoClick);
 BONUS.addEventListener("click", bonus);
 
-let score = Number(0);
+let score = Number(5000);
 let multiplicateur = Number(1);
 let costmult = 50;
 let costauto = 500;
 let i = 0;
 let costbonus = 5000;
 let chrono = 30;
+let clickvalue = 1;
 
 function augmenterMultiplicateur() {
     if (score >= costmult) {
@@ -27,33 +28,38 @@ function augmenterMultiplicateur() {
     }
 }
 
+function disabled() {
+
+}
+
 function cookieClicker() {
     affichage.classList.toggle("toggleclic");
-    score+=multiplicateur;
+    score+=(clickvalue*multiplicateur);
     console.log("score cookieClicker = " + score);
 }
 
 function bonus() {
     if (score >= costbonus) {
         score -= costbonus;
-        score *= 2;
+        clickvalue*=2;
         // i = 0;
         // chrono = 30;
         let timer = setInterval(function(){
-            // score = score * Number(2);
             if (chrono > 0) {
-                chrono -= i;
-                i++;
+                chrono -= 1;
+                score *= 2;
             }
             else {}
-            console.log("i = " + i);
+            // console.log("i = " + i);
             console.log("chrono = " + chrono);
             BONUS.value = "Bonus actif pendant " + chrono + " secondes";
-            if (i >= 30) {
+            if (chrono == 0) {
                 clearInterval(timer);
-                score *= 1;
+                clickvalue *= 1;
+                BONUS.value = "Bonus : " + costbonus + " data";
                 }
-            else {}
+            else {
+            }
         }, 1000);
         console.log("Score + bonus = " + score);
     }
