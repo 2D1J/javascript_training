@@ -13,15 +13,15 @@ let score = Number(0);
 let multiplicateur = Number(1);
 let costmult = 50;
 let costauto = 500;
-let i = 0
+let i = 0;
 let costbonus = 5000;
+let chrono = 30;
 
 function augmenterMultiplicateur() {
     if (score >= costmult) {
         score -= costmult;
         multiplicateur++;
         costmult = costmult * 2;
-        // MULTIPLIER.value = "Multiplicateur x" + multiplicateur + " : " + costmult + " data";
     }
     else {
     }
@@ -29,34 +29,35 @@ function augmenterMultiplicateur() {
 
 function cookieClicker() {
     affichage.classList.toggle("toggleclic");
-    score = score+multiplicateur;
+    score+=multiplicateur;
+    console.log("score cookieClicker = " + score);
 }
 
 function bonus() {
     if (score >= costbonus) {
         score -= costbonus;
-        score = 2 * score;
-        let i = 0;
-        let chrono = 30;
+        score *= 2;
+        // i = 0;
+        // chrono = 30;
         let timer = setInterval(function(){
-            score = score * Number(2);
-            i++
-            chrono -= i;
-            console.log(i);
-            BONUS.value = "Bonus actif pendant " + chrono + "secondes";
+            // score = score * Number(2);
+            if (chrono > 0) {
+                chrono -= i;
+                i++;
+            }
+            else {}
+            console.log("i = " + i);
+            console.log("chrono = " + chrono);
+            BONUS.value = "Bonus actif pendant " + chrono + " secondes";
             if (i >= 30) {
-                clearInterval(timer)
+                clearInterval(timer);
+                score *= 1;
                 }
             else {}
         }, 1000);
-        // console.log(i);
-        // if (i >= 30) {
-        // clearInterval(timer)
-        // }
-        // else {}
+        console.log("Score + bonus = " + score);
     }
 };
-
 
 function autoClick() {
     if (score >= costauto) {
@@ -70,7 +71,7 @@ function autoClick() {
 function update(){
     AFFICHER.innerHTML = score + " data collected.";
     MULTIPLIER.value = "Multiplicateur x" + multiplicateur + " : " + costmult + " data";
-    BONUS.value = "Bonus : " + costbonus + " data";
+    // BONUS.value = "Bonus : " + costbonus + " data";
     AUTOCLICK.value = "Autoclicker : " + costauto + " data";
 
     if (score < costauto) {
